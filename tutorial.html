@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">Tutorial — Domina Excel</title>
+<meta name="description" id="pageDescription" content="Tutorial prático de Excel com simulação visual passo a passo.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-bar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">DX</span>
+      Domina Excel
+    </a>
+    <div class="nav-search">
+      <input type="search" id="searchInput" placeholder="Buscar por fórmula ou tema..." aria-label="Buscar tutorial">
+    </div>
+    <nav class="nav-links">
+      <a href="index.html#tutoriais">Tutoriais</a>
+      <a href="index.html#sobre">Sobre</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">☰</button>
+  </div>
+</header>
+
+<div class="tutorial-header">
+  <div class="container">
+    <p class="breadcrumb"><a href="index.html">Domina Excel</a> / <span id="breadcrumbCategory">Categoria</span></p>
+    <div class="tutorial-title-row">
+      <div>
+        <div class="tutorial-badges" id="tutorialBadges"></div>
+        <h1 id="tutorialTitle">Carregando...</h1>
+        <p class="subtitle" id="tutorialSubtitle"></p>
+      </div>
+      <a href="#" class="btn btn-download" id="downloadBtn" download>Baixar Planilha de Exercícios</a>
+    </div>
+    <div class="formula-syntax hidden" id="formulaSyntax"></div>
+  </div>
+</div>
+
+<main class="tutorial-body">
+  <div class="container" style="max-width:880px;">
+    <div class="problem-box">
+      <h2>💡 O problema real</h2>
+      <p id="problemText"></p>
+    </div>
+
+    <div id="stepsContainer"></div>
+
+    <div class="tips-box hidden" id="tipsBox">
+      <h2>✅ Boas práticas e dicas extras</h2>
+      <ul id="tipsList"></ul>
+    </div>
+
+    <div class="tutorial-nav" id="tutorialNav"></div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <strong>Domina Excel</strong>
+    <p>Capacitação prática em Excel para otimizar rotinas administrativas e promover inclusão digital.</p>
+    <div class="footer-bottom">© 2026 Domina Excel. Conteúdo educacional gratuito. Criado por Raissa Mazurana RU: 3409138</div>
+  </div>
+</footer>
+
+<script src="js/tutorials-data.js"></script>
+<script src="js/excel-sim.js"></script>
+<script src="js/tutorial.js"></script>
+</body>
+</html>

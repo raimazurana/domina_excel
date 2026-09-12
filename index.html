@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domina Excel — Capacitação prática em Excel para rotinas administrativas</title>
+<meta name="description" content="Tutoriais práticos e visuais de Excel para o dia a dia administrativo: PROCX, tabelas dinâmicas, formatação condicional e muito mais, com planilhas de exercício para baixar.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-bar">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">DX</span>
+      Domina Excel
+    </a>
+    <div class="nav-search">
+      <input type="search" id="searchInput" placeholder="Buscar por fórmula ou tema (ex: PROCX, duplicatas...)" aria-label="Buscar tutorial">
+    </div>
+    <nav class="nav-links">
+      <a href="index.html#tutoriais">Tutoriais</a>
+      <a href="index.html#sobre">Sobre</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container hero-inner">
+    <div>
+      <span class="eyebrow">Projeto educacional gratuito</span>
+      <h1>Domine o Excel que <span>resolve o seu dia a dia</span> administrativo</h1>
+      <p class="lead">Chega de perder a sexta-feira fechando planilha na mão. Aprenda PROCX, tabela dinâmica, formatação condicional e mais 18 recursos com exemplos de rotina real, passo a passo visual e planilha de exercício para baixar.</p>
+      <div class="hero-actions">
+        <a href="#tutoriais" class="btn btn-primary">Ver todos os tutoriais</a>
+        <a href="tutorial.html?slug=procx" class="btn btn-outline">Começar pelo PROCX →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="excel-window">
+        <div class="excel-titlebar">
+          <span>controle-de-caixa.xlsx</span>
+          <span class="dots"><span></span><span></span><span></span></span>
+        </div>
+        <div class="excel-ribbon">
+          <span class="active">Página Inicial</span><span>Inserir</span><span>Fórmulas</span><span>Dados</span>
+        </div>
+        <div class="formula-bar">
+          <div class="name-box">C2</div>
+          <div class="fx">fx</div>
+          <div class="formula-input"><span class="fn-name">=SEERRO</span>(<span class="arg-1">PROCX(A2;Base!A:A;Base!B:B)</span>;<span class="arg-2">"Verificar"</span>)</div>
+        </div>
+        <div class="excel-grid-scroll">
+          <table class="excel-table">
+            <tr><th class="row-head"></th><th>A</th><th>B</th><th>C</th></tr>
+            <tr><th class="row-head">1</th><td class="excel-cell header-cell">Matrícula</td><td class="excel-cell header-cell">Nome</td><td class="excel-cell header-cell">Salário</td></tr>
+            <tr><th class="row-head">2</th><td class="excel-cell">1042</td><td class="excel-cell">Ana Souza</td><td class="excel-cell result-highlight num">3.200,00</td></tr>
+            <tr><th class="row-head">3</th><td class="excel-cell">1099</td><td class="excel-cell">Bruna Dias</td><td class="excel-cell match-highlight">Verificar</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <section class="section" id="tutoriais">
+    <div class="container">
+      <div class="section-head">
+        <h2>Escolha um tutorial e aprenda fazendo</h2>
+        <p>Cada página traz o problema real primeiro, depois o passo a passo com a tela do Excel simulada e um botão para baixar a planilha de exercícios.</p>
+      </div>
+
+      <div class="filters" id="filterChips"></div>
+
+      <div class="card-grid" id="cardGrid"></div>
+      <p class="no-results" id="noResults">Nenhum tutorial encontrado para essa busca. Tente outro termo, como "duplicatas" ou "gráfico".</p>
+    </div>
+  </section>
+
+  <section class="section" id="sobre" style="background:#fff;border-top:1px solid var(--border);">
+    <div class="container" style="max-width:760px;">
+      <div class="section-head">
+        <h2>Por que o Domina Excel existe</h2>
+        <p>
+          Excel não devia ser um bicho de sete cabeças para quem cuida de folha de pagamento, estoque ou cadastro de clientes.
+Criei o Domina Excel porque sei como é perder horas tentando resolver uma fórmula no meio do expediente.
+Quero dar autonomia a quem precisa resolver rotina administrativa de verdade, sem curso de 40 horas, direto ao ponto: o problema, a solução e a prática.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <strong>Domina Excel</strong>
+    <p>Capacitação prática em Excel para otimizar rotinas administrativas e promover inclusão digital.</p>
+    <div class="footer-bottom">© 2026 Domina Excel. Conteúdo educacional gratuito. Criado por Raissa Mazurana RU: 3409138</div>
+  </div>
+</footer>
+
+<script src="js/tutorials-data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

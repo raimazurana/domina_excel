@@ -1,0 +1,964 @@
+/* =========================================================
+   Domina Excel — Design System
+   Tema: verde Excel + visual moderno, acessível e responsivo
+   ========================================================= */
+
+:root {
+  --excel-green: #21a366;
+  --excel-green-dark: #14713f;
+  --excel-green-darker: #0f5c33;
+  --excel-green-light: #e6f4ec;
+  --ink: #1b1f23;
+  --ink-soft: #4a5058;
+  --paper: #ffffff;
+  --paper-soft: #f6f8f7;
+  --border: #dfe4e2;
+  --border-strong: #c3cbc7;
+  --warn: #c0392b;
+  --accent-blue: #2563eb;
+  --accent-orange: #e07b00;
+  --accent-purple: #7c3aed;
+  --accent-yellow: #d69e00;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 18px rgba(15, 92, 51, 0.08);
+  --shadow-strong: 0 12px 32px rgba(15, 92, 51, 0.14);
+  --font: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --mono: "Consolas", "SFMono-Regular", Menlo, Monaco, monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--paper-soft);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; }
+
+a { color: inherit; }
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* -------------------- Header / Nav -------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 20px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.15rem;
+  text-decoration: none;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--excel-green), var(--excel-green-darker));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 900;
+  box-shadow: var(--shadow);
+}
+
+.nav-search {
+  flex: 1;
+  max-width: 420px;
+  position: relative;
+}
+
+.nav-search input {
+  width: 100%;
+  padding: 10px 14px 10px 38px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--paper-soft);
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+
+.nav-search input:focus {
+  outline: 2px solid var(--excel-green);
+  outline-offset: 1px;
+}
+
+.nav-search::before {
+  content: "🔎";
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.nav-links { display: flex; gap: 18px; align-items: center; }
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+.nav-links a:hover { color: var(--excel-green-dark); }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-search { order: 3; max-width: 100%; flex-basis: 100%; }
+  .nav-bar { flex-wrap: wrap; }
+}
+
+/* -------------------- Hero -------------------- */
+
+.hero {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(33, 163, 102, 0.16), transparent 45%),
+    radial-gradient(circle at 85% 0%, rgba(33, 163, 102, 0.12), transparent 40%),
+    var(--paper);
+  padding: 64px 0 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .hero-inner { grid-template-columns: 1fr; }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--excel-green-light);
+  color: var(--excel-green-darker);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  line-height: 1.15;
+  margin: 0 0 16px;
+  font-weight: 800;
+}
+
+.hero h1 span { color: var(--excel-green-dark); }
+
+.hero p.lead {
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+  max-width: 54ch;
+  margin: 0 0 26px;
+}
+
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.btn:hover { transform: translateY(-1px); }
+
+.btn-primary {
+  background: var(--excel-green);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+.btn-primary:hover { background: var(--excel-green-dark); box-shadow: var(--shadow-strong); }
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--border-strong);
+  color: var(--ink);
+}
+.btn-outline:hover { border-color: var(--excel-green); color: var(--excel-green-dark); }
+
+.btn-download {
+  background: #fff;
+  color: var(--excel-green-darker);
+  border: 2px solid var(--excel-green);
+}
+.btn-download:hover { background: var(--excel-green); color: #fff; }
+.btn-download::before { content: "⬇"; font-size: 1rem; }
+
+.hero-stats {
+  display: flex;
+  gap: 26px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.hero-stats div { min-width: 90px; }
+.hero-stats strong { display: block; font-size: 1.5rem; color: var(--excel-green-darker); }
+.hero-stats span { font-size: 0.82rem; color: var(--ink-soft); }
+
+/* Hero mini excel preview */
+.hero-visual {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-strong);
+  overflow: hidden;
+}
+
+/* -------------------- Section headings -------------------- */
+
+.section { padding: 56px 0; }
+.section-head { text-align: center; max-width: 640px; margin: 0 auto 36px; }
+.section-head h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 10px; font-weight: 800; }
+.section-head p { color: var(--ink-soft); margin: 0; }
+
+/* -------------------- Category filters -------------------- */
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 34px;
+}
+
+.filter-chip {
+  border: 1px solid var(--border-strong);
+  background: var(--paper);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--ink-soft);
+}
+
+.filter-chip.active,
+.filter-chip:hover {
+  background: var(--excel-green);
+  border-color: var(--excel-green);
+  color: #fff;
+}
+
+.no-results {
+  text-align: center;
+  color: var(--ink-soft);
+  padding: 40px 0;
+  display: none;
+}
+.no-results.visible { display: block; }
+
+/* -------------------- Tutorial cards -------------------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 20px;
+}
+
+.tutorial-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  text-decoration: none;
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+  position: relative;
+}
+
+.tutorial-card:hover {
+  box-shadow: var(--shadow-strong);
+  transform: translateY(-3px);
+  border-color: var(--excel-green);
+}
+
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+
+.tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--excel-green-light);
+  color: var(--excel-green-darker);
+  white-space: nowrap;
+}
+
+.level {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.level-iniciante { background: #e6f4ec; color: var(--excel-green-darker); }
+.level-intermediario { background: #fff2df; color: #8a5300; }
+.level-avancado { background: #fde8e8; color: #a12626; }
+
+.tutorial-card h3 { margin: 4px 0 0; font-size: 1.15rem; }
+.tutorial-card .subtitle { font-size: 0.86rem; color: var(--ink-soft); margin: 0; }
+.tutorial-card .formula-chip {
+  margin-top: auto;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  background: var(--paper-soft);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  color: var(--excel-green-darker);
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+/* -------------------- Category section blocks (index) -------------------- */
+
+.category-block { margin-bottom: 44px; }
+.category-block h2 {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.category-block h2::before {
+  content: "";
+  width: 6px;
+  height: 22px;
+  background: var(--excel-green);
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* -------------------- Footer -------------------- */
+
+.site-footer {
+  background: #10241a;
+  color: #cfe6da;
+  padding: 40px 0 24px;
+  margin-top: 40px;
+}
+.site-footer .container { display: flex; flex-direction: column; gap: 14px; }
+.site-footer a { color: #a9d9bf; text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+.footer-bottom { font-size: 0.8rem; opacity: 0.75; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 16px; }
+
+/* =========================================================
+   Página de Tutorial
+   ========================================================= */
+
+.tutorial-header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  padding: 36px 0 30px;
+}
+
+.breadcrumb { font-size: 0.85rem; color: var(--ink-soft); margin-bottom: 14px; }
+.breadcrumb a { text-decoration: none; color: var(--excel-green-dark); font-weight: 600; }
+
+.tutorial-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 18px;
+}
+
+.tutorial-badges { display: flex; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+
+.tutorial-title-row h1 { margin: 0 0 4px; font-size: clamp(1.7rem, 3.4vw, 2.4rem); }
+.tutorial-title-row .subtitle { color: var(--ink-soft); font-size: 1.05rem; margin: 0; }
+
+.formula-syntax {
+  margin-top: 18px;
+  font-family: var(--mono);
+  background: var(--ink);
+  color: #d7ffe9;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  overflow-x: auto;
+}
+.formula-syntax .fn { color: #7fe0a8; font-weight: 700; }
+
+.tutorial-body { padding: 40px 0 70px; }
+
+.problem-box {
+  background: #fff8ec;
+  border: 1px solid #f2dfb0;
+  border-left: 5px solid var(--accent-yellow);
+  border-radius: var(--radius-sm);
+  padding: 20px 22px;
+  margin-bottom: 42px;
+}
+.problem-box h2 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.problem-box p { margin: 0; color: var(--ink-soft); }
+
+.step {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 34px;
+  padding: 34px 0;
+  border-top: 1px solid var(--border);
+  align-items: start;
+}
+.step:first-of-type { border-top: none; }
+
+@media (max-width: 860px) {
+  .step { grid-template-columns: 1fr; gap: 20px; }
+}
+
+.step-text .step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--excel-green);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+.step-text h3 { margin: 0 0 10px; font-size: 1.2rem; }
+.step-text p { color: var(--ink-soft); margin: 0 0 10px; }
+.step-text .why {
+  margin-top: 12px;
+  background: var(--excel-green-light);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  color: var(--excel-green-darker);
+}
+.step-text .why strong { display: block; margin-bottom: 4px; }
+
+.step-visual { min-width: 0; }
+
+.tips-box {
+  margin-top: 46px;
+  background: var(--excel-green-light);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+}
+.tips-box h2 { margin: 0 0 14px; font-size: 1.15rem; }
+.tips-box ul { margin: 0; padding-left: 20px; color: var(--ink); }
+.tips-box li { margin-bottom: 8px; }
+
+.tutorial-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.tutorial-nav a {
+  text-decoration: none;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 12px 18px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+  flex: 1;
+  min-width: 200px;
+}
+.tutorial-nav a:hover { border-color: var(--excel-green); color: var(--excel-green-dark); }
+.tutorial-nav a.next { text-align: right; }
+
+/* =========================================================
+   Simulador de Excel (HTML/CSS puro, sem <img>)
+   ========================================================= */
+
+.excel-sim-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.excel-window {
+  border: 1px solid #b9c2bd;
+  border-radius: 10px;
+  overflow: visible;
+  box-shadow: var(--shadow);
+  background: #fff;
+}
+
+.excel-titlebar {
+  background: var(--excel-green-darker);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px 10px 0 0;
+}
+.excel-titlebar .dots { display: flex; gap: 5px; }
+.excel-titlebar .dots span {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.5); display: inline-block;
+}
+
+.excel-ribbon {
+  display: flex;
+  gap: 16px;
+  padding: 6px 12px;
+  background: #f3f5f4;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  overflow-x: auto;
+}
+.excel-ribbon span.active { color: var(--excel-green-darker); border-bottom: 2px solid var(--excel-green); padding-bottom: 4px; }
+
+.formula-bar {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+.formula-bar .name-box {
+  width: 64px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-soft);
+  font-weight: 700;
+  background: #fafbfa;
+  flex-shrink: 0;
+}
+.formula-bar .fx {
+  width: 30px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--excel-green-dark);
+  font-style: italic;
+  font-weight: 700;
+  border-right: 1px solid var(--border);
+  background: #fafbfa;
+}
+.formula-bar .formula-input {
+  flex: 1;
+  padding: 7px 10px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: var(--ink);
+}
+.formula-bar .formula-input .cursor {
+  display: inline-block;
+  width: 1px;
+  background: var(--ink);
+  animation: blink 1s step-end infinite;
+  margin-left: 1px;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.formula-bar .formula-input .dollar { color: var(--warn); font-weight: 800; }
+.formula-bar .formula-input .fn-name { color: var(--excel-green-dark); font-weight: 800; }
+.formula-bar .formula-input .arg-1 { color: var(--accent-blue); font-weight: 700; }
+.formula-bar .formula-input .arg-2 { color: var(--accent-orange); font-weight: 700; }
+.formula-bar .formula-input .arg-3 { color: var(--accent-purple); font-weight: 700; }
+.formula-bar .formula-input .arg-4 { color: var(--accent-yellow); font-weight: 700; }
+.formula-bar .formula-input .punct { color: var(--ink-soft); }
+
+.excel-grid-scroll { overflow-x: auto; }
+
+.excel-table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 0.82rem;
+}
+
+.excel-table caption {
+  caption-side: top;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  padding: 8px 10px 4px;
+  background: #fff;
+}
+
+.excel-table th,
+.excel-table td.excel-cell {
+  border: 1px solid #d7dbd9;
+  padding: 6px 9px;
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+
+.excel-table th {
+  background: #f3f5f4;
+  color: var(--ink-soft);
+  font-weight: 700;
+  text-align: center;
+  font-size: 0.74rem;
+  min-width: 46px;
+}
+
+.excel-table th.row-head {
+  width: 34px;
+  min-width: 34px;
+}
+
+.excel-table td.excel-cell {
+  background: #fff;
+  color: var(--ink);
+  text-align: left;
+}
+
+.excel-cell.num { text-align: right; font-variant-numeric: tabular-nums; }
+.excel-cell.center { text-align: center; }
+.excel-cell.muted { color: var(--ink-soft); }
+.excel-cell.header-cell { font-weight: 700; background: #eef2f0; }
+
+.excel-cell.active {
+  outline: 2px solid var(--excel-green);
+  outline-offset: -2px;
+  background: #eafaf1;
+  font-family: var(--mono);
+  z-index: 2;
+}
+
+.excel-cell.arg-1 { background: rgba(37, 99, 235, 0.12); outline: 1.5px solid var(--accent-blue); outline-offset: -1.5px; }
+.excel-cell.arg-2 { background: rgba(224, 123, 0, 0.14); outline: 1.5px solid var(--accent-orange); outline-offset: -1.5px; }
+.excel-cell.arg-3 { background: rgba(124, 58, 237, 0.12); outline: 1.5px solid var(--accent-purple); outline-offset: -1.5px; }
+.excel-cell.arg-4 { background: rgba(214, 158, 0, 0.14); outline: 1.5px solid var(--accent-yellow); outline-offset: -1.5px; }
+
+.excel-cell.match-highlight { background: #fff3b0; font-weight: 700; }
+.excel-cell.result-highlight { background: #d9f5e3; font-weight: 700; color: var(--excel-green-darker); }
+.excel-cell.error-cell { color: var(--warn); font-weight: 700; background: #fdecec; }
+.excel-cell.new-rule { background: #eafaf1; }
+.excel-cell.locked-cell { background: repeating-linear-gradient(45deg, #e4e9e6, #e4e9e6 6px, #cfd7d2 6px, #cfd7d2 12px); color: var(--ink-soft); }
+.excel-cell.frozen-edge { border-right: 3px solid var(--excel-green) !important; }
+.excel-cell.frozen-edge-bottom { border-bottom: 3px solid var(--excel-green) !important; }
+.excel-cell.merged-look { background: #eef2f0; text-align: center; }
+
+.excel-cell .cell-databar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: rgba(99, 190, 123, 0.55);
+  z-index: 0;
+}
+.excel-cell .cell-text { position: relative; z-index: 1; }
+.excel-cell .cell-icon { margin-right: 3px; }
+
+.fill-handle {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: var(--excel-green-dark);
+  right: -1px;
+  bottom: -1px;
+  border: 1px solid #fff;
+  z-index: 3;
+}
+
+.excel-tooltip {
+  position: relative;
+  margin-top: -2px;
+}
+.excel-tooltip .tooltip-box {
+  display: inline-block;
+  background: #fffbe8;
+  border: 1px solid #e5d38a;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+  max-width: 100%;
+}
+.excel-tooltip .tooltip-box .cur { color: var(--excel-green-darker); font-weight: 800; }
+
+.excel-caption-label {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.dual-table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 520px) {
+  .dual-table-row { grid-template-columns: 1fr; }
+}
+
+.link-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--excel-green-light);
+  color: var(--excel-green-darker);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 999px;
+  margin-top: 8px;
+}
+
+/* Sanfona (accordion) usada nas fórmulas de formatação condicional */
+.accordion-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+.accordion-trigger {
+  width: 100%;
+  text-align: left;
+  background: var(--paper-soft);
+  border: none;
+  padding: 14px 18px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--ink);
+}
+.accordion-trigger::after { content: "+"; font-size: 1.1rem; color: var(--excel-green-dark); }
+.accordion-item.open .accordion-trigger::after { content: "−"; }
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+  padding: 0 18px;
+}
+.accordion-item.open .accordion-panel {
+  max-height: 600px;
+  padding: 4px 18px 18px;
+}
+.accordion-panel p { color: var(--ink-soft); margin: 0 0 8px; }
+
+/* -------------------- Dialogos / painéis simulados do Excel -------------------- */
+
+.excel-dialog {
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  font-size: 0.82rem;
+}
+.excel-dialog-title {
+  background: #f3f5f4;
+  padding: 8px 14px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  color: var(--ink);
+}
+.excel-dialog-body { padding: 16px; }
+.excel-field-row { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.excel-field-row label { width: 130px; flex-shrink: 0; font-weight: 600; color: var(--ink-soft); font-size: 0.78rem; }
+.excel-input-box {
+  flex: 1;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  padding: 6px 9px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  background: #fafbfa;
+  color: var(--ink);
+  min-width: 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.excel-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--border);
+  background: #fafbfa;
+}
+.excel-btn-mini {
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 1px solid var(--border-strong);
+  background: #fff;
+  color: var(--ink);
+}
+.excel-btn-mini.primary { background: var(--excel-green); color: #fff; border-color: var(--excel-green); }
+
+.chip-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip-list .chip {
+  background: var(--paper-soft);
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+.chip-list .chip.selected { background: var(--excel-green); color: #fff; border-color: var(--excel-green); }
+.chip-list .chip.ghost { opacity: 0.55; border-style: dashed; }
+
+.mini-chart-wrap {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 14px 30px;
+  position: relative;
+}
+.mini-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  height: 130px;
+}
+.mini-chart .bar-col { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; height: 100%; position: relative; }
+.mini-chart .bar {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(180deg, #34c281, var(--excel-green-dark));
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding-top: 4px;
+}
+.mini-chart .bar-label {
+  position: absolute;
+  bottom: -20px;
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.mini-chart-title { font-size: 0.76rem; font-weight: 700; color: var(--ink-soft); margin-bottom: 10px; }
+
+.ribbon-path {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--paper-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--excel-green-darker);
+  margin-bottom: 12px;
+}
+.ribbon-path .sep { color: var(--border-strong); font-weight: 400; }
+
+.mock-menu {
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  font-size: 0.8rem;
+}
+.mock-menu .mock-menu-item {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+}
+.mock-menu .mock-menu-item:last-child { border-bottom: none; }
+.mock-menu .mock-menu-item.highlighted { background: var(--excel-green-light); color: var(--excel-green-darker); font-weight: 700; }
+.mock-menu .mock-menu-item .swatch { width: 14px; height: 14px; border-radius: 3px; display: inline-block; flex-shrink: 0; }
+
+/* Utility */
+.text-center { text-align: center; }
+.mt-lg { margin-top: 40px; }
+.hidden { display: none !important; }

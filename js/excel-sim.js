@@ -1,11 +1,3 @@
-/*
- * Motor de renderização das "mini planilhas" (simulação visual do Excel)
- * Tudo é HTML + CSS puro (nenhuma tag <img> é usada). Cada tutorial descreve,
- * em tutorials-data.js, um objeto "visual" por passo, e as funções abaixo
- * transformam esse objeto em marcação real, reaproveitando as classes
- * .excel-table / .excel-cell / .formula-bar definidas em css/style.css.
- */
-
 function escapeHtml(str) {
   return String(str)
     .replaceAll('&', '&amp;')

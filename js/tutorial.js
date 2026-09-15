@@ -1,5 +1,3 @@
-/* Domina Excel — renderização da página de tutorial a partir de tutorials-data.js */
-
 (function () {
   const params = new URLSearchParams(window.location.search);
   const slug = params.get('slug');

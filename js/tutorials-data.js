@@ -1,11 +1,3 @@
-/*
- * Domina Excel: base de conteúdo dos tutoriais
- * Cada tutorial vira uma página (tutorial.html?slug=...) renderizada pelo
- * motor em excel-sim.js. O texto segue o estilo "Guanabara": linguagem
- * direta e descontraída, problema real de rotina administrativa antes da
- * teoria, e o "porquê" de cada clique, nunca decoreba.
- */
-
 const CATEGORIES = [
   { id: 'busca-referencia', label: 'Busca e Referência', icon: '🔗' },
   { id: 'logica-condicionais', label: 'Lógica e Condicionais', icon: '🧠' },

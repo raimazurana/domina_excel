@@ -1,5 +1,3 @@
-/* Domina Excel — página inicial: catálogo, filtros por categoria e busca */
-
 (function () {
   const grid = document.getElementById('cardGrid');
   const filterWrap = document.getElementById('filterChips');

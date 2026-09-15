@@ -318,14 +318,14 @@ const TUTORIALS = [
     {
       title: 'Precisa de mais de duas opções? Aninhe outro SE',
       text: 'Se quiser um terceiro resultado, tipo "Vence hoje", troque o terceiro argumento por outro SE completo: <code>=SE(B2&lt;HOJE();"Atrasado";SE(B2=HOJE();"Vence hoje";"Em dia"))</code>.',
-      why: 'Cada SE resolve uma pergunta. Encadeando SEs você cria uma trilha de perguntas, mas cuidado: passar de 3 ou 4 níveis deixa a fórmula ilegível, e aí vale mais a pena usar SE.CONJ ou PROCX numa tabela de faixas.',
+      why: 'Cada SE resolve uma pergunta. Encadeando SEs você cria uma trilha de perguntas, mas cuidado: passar de 3 ou 4 níveis deixa a fórmula ilegível, e aí vale mais a pena usar SES ou PROCX numa tabela de faixas.',
       visual: { chrome: false, note: 'Dica: mais de 3 SEs aninhados costuma ser sinal de que uma tabela auxiliar resolveria melhor.' }
     }
   ],
   tips: [
     'Texto sempre entre aspas dentro do SE: "Em dia" e não Em dia, senão o Excel acha que é o nome de uma célula.',
     'Combine o SE com formatação condicional (veja o tutorial correspondente) para colorir automaticamente "Atrasado" de vermelho.',
-    'Para várias condições diferentes ao mesmo tempo, dê uma olhada em SE.CONJ ou SES, disponíveis nas versões mais novas do Excel.'
+    'Para várias condições diferentes ao mesmo tempo, dê uma olhada em SES, disponíveis nas versões mais novas do Excel.'
   ]
 },
 

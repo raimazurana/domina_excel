@@ -25,13 +25,3 @@ js/main.js           → catálogo (busca, filtros, renderização dos cards)
 js/tutorial.js        → renderização da página de tutorial
 assets/planilhas/    → 21 planilhas .xlsx de exercício para download
 ```
-
-## Rodando localmente
-
-Como é um site 100% estático, basta servir a pasta com qualquer servidor HTTP:
-
-```
-python3 -m http.server 8000
-```
-
-E acessar `http://localhost:8000/index.html`.
